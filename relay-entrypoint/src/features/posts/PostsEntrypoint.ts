@@ -6,8 +6,7 @@ export type PostsEntrypointParams = {}
 
 const PostsEntrypoint: EntryPoint<any, PostsEntrypointParams> = {
   root: JSResource('Posts', () => import(/* webpackPrefetch: true */ './Posts')) as any,
-  // @ts-ignore
-  getPreloadProps: (_params) => {
+  getPreloadProps: params => {
     return {
       queries: {
         postsQueryRef: {
@@ -15,7 +14,7 @@ const PostsEntrypoint: EntryPoint<any, PostsEntrypointParams> = {
             kind: 'PreloadableConcreteRequest',
             params: PostsQuery.params,
           },
-          variables: {},
+          variables: params,
         }
       }
     }
