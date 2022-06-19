@@ -3,23 +3,20 @@
 ## Getting Started
 
 ### Start DB and backend
-- Start db
 ```
-  docker compose up -d
-```
-- Install backend deps
-```
-  cd backend
-  pnpm i
-```
-- Migrate db
-```
-  cp .env.example .env
-  npx prisma migrate dev
-```
-- Start backend
-```
-pnpm dev
+  Start db
+    docker compose up -d
+
+  Install backend deps
+    cd backend
+    pnpm i
+
+  Migrate db
+    cp .env.example .env
+    npx prisma migrate dev
+
+  Start backend
+    pnpm dev
 ```
 
 ### Play with relay
