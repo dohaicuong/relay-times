@@ -1,3 +1,4 @@
+import { Button, List, ScrollArea, Text } from '@mantine/core'
 import { graphql, usePaginationFragment } from 'react-relay'
 import PostListItem from './PostListItem'
 import { PostListPaginationQuery } from './__generated__/PostListPaginationQuery.graphql'
@@ -42,14 +43,16 @@ const PostList: React.FC<PostListProps> = ({ queryRef }) => {
 
   return (
     <>
-      <ul>
-        {data.posts?.edges.map(edge => {
-          if (!edge?.node?.id) return null
-          return <PostListItem key={edge.node.id} postRef={edge.node} />
-        })}
-      </ul>
-      {isLoadingNext && <p>Loading more posts...</p>}
-      {hasNext && <button disabled={isLoadingNext} onClick={() => loadNext(10)}>Load more</button>}
+      <List>
+        <ScrollArea sx={{ height: 500 }}>
+          {data.posts?.edges.map(edge => {
+            if (!edge?.node?.id) return null
+            return <PostListItem key={edge.node.id} postRef={edge.node} />
+          })}
+        </ScrollArea>
+      </List>
+      {isLoadingNext && <Text color='gray'>Loading more posts...</Text>}
+      {hasNext && <Button disabled={isLoadingNext} onClick={() => loadNext(10)}>Load more</Button>}
     </>
   )
 }

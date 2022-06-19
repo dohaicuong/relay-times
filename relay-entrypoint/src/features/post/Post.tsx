@@ -26,12 +26,10 @@ const Post: React.FC<PostProps> = ({ queries }) => {
 
 
   return (
-    <Center>
-      <Stack>
-        <Title order={1}>{data.node?.title}</Title>
-        <Text>{data.node?.body}</Text>
-      </Stack>
-    </Center>
+    <Stack>
+      <Title order={1}>{data.node?.title}</Title>
+      <Text>{data.node?.body}</Text>
+    </Stack>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Title } from '@mantine/core'
 import { graphql, PreloadedQuery, usePreloadedQuery } from 'react-relay'
 import PostList from './PostList'
 import { PostsQuery } from './__generated__/PostsQuery.graphql'
@@ -20,9 +21,9 @@ const Posts: React.FC<PostsProps> = ({ queries }) => {
 
   return (
     <>
-      <p>
+      <Title order={3}>
         Posts
-      </p>
+      </Title>
       <PostList queryRef={data} />
     </>
   )

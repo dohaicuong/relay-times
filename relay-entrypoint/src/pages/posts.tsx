@@ -20,7 +20,7 @@ export const PostsEntrypointLoader: LoaderFunction = ({ request, params, signal 
 export const PostsEntrypointContainer = () => {
   const ref = useLoaderData() as LoaderData
   return (
-    <Grid grow>
+    <Grid grow sx={{ margin: 0 }}>
       <Col span={3}>
         <Suspense fallback='Loading posts...'>
           <ErrorBoundary fallbackRender={({ error }) => <div>{error.message}</div>}>

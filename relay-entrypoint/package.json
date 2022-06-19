@@ -11,6 +11,7 @@
   "dependencies": {
     "@mantine/core": "^4.2.10",
     "@mantine/hooks": "^4.2.10",
+    "@mantine/notifications": "^4.2.10",
     "jsresource": "^0.0.8",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

@@ -1,5 +1,6 @@
+import { ListItem, Text } from '@mantine/core'
 import { graphql, useFragment } from 'react-relay'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { PostListItem_post$key } from './__generated__/PostListItem_post.graphql'
 
 type PostListItemProps = {
@@ -7,6 +8,7 @@ type PostListItemProps = {
 }
 
 const PostListItem: React.FC<PostListItemProps> = ({ postRef }) => {
+  const navigate = useNavigate()
   const post = useFragment(
     graphql`
       fragment PostListItem_post on Post {
@@ -18,11 +20,14 @@ const PostListItem: React.FC<PostListItemProps> = ({ postRef }) => {
   )
 
   return (
-    <li>
-      <Link to={post.id}>
-        {post.title}
-      </Link>
-    </li>
+    <Text
+      variant='link'
+      component={ListItem}
+      onClick={() => navigate(post.id)}
+      sx={{ cursor: 'pointer' }}
+    >
+      {post.title}
+    </Text>
   )
 }
 
