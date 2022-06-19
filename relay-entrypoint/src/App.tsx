@@ -15,7 +15,7 @@ const App = () => {
   )
 
   useEffect(() => {
-    loadEntryPoint({} as never)
+    loadEntryPoint({})
 
     return () => {
       disposeEntryPoint()
