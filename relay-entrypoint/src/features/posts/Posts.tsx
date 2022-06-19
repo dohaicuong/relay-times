@@ -17,7 +17,6 @@ const Posts: React.FC<PostsProps> = ({ queries }) => {
     `,
     queries.postsQueryRef
   )
-  if (!data) return null
 
   return (
     <>

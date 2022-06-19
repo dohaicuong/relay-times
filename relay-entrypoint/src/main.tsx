@@ -2,10 +2,24 @@ import { createRoot } from 'react-dom/client'
 
 import { RelayProvider } from './providers/relay'
 
-import App from './App'
+import { DataBrowserRouter, Route } from 'react-router-dom'
+import { PostsEntrypointLoader, PostsEntrypointContainer } from './pages/posts'
+import { PostEntrypointLoader, PostEntrypointContainer } from './pages/post'
 
 createRoot(document.getElementById('root')!).render(
   <RelayProvider>
-    <App />
+    <DataBrowserRouter>
+      <Route
+        path='/posts'
+        loader={PostsEntrypointLoader}
+        element={<PostsEntrypointContainer />}
+      >
+        <Route
+          path=':id'
+          loader={PostEntrypointLoader}
+          element={<PostEntrypointContainer />}
+        />
+      </Route>
+    </DataBrowserRouter>
   </RelayProvider>
 )

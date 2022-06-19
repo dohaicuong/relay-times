@@ -1,4 +1,5 @@
 import { graphql, useFragment } from 'react-relay'
+import { Link } from 'react-router-dom'
 import { PostListItem_post$key } from './__generated__/PostListItem_post.graphql'
 
 type PostListItemProps = {
@@ -9,6 +10,7 @@ const PostListItem: React.FC<PostListItemProps> = ({ postRef }) => {
   const post = useFragment(
     graphql`
       fragment PostListItem_post on Post {
+        id
         title
       }
     `,
@@ -16,7 +18,11 @@ const PostListItem: React.FC<PostListItemProps> = ({ postRef }) => {
   )
 
   return (
-    <li>{post.title}</li>
+    <li>
+      <Link to={post.id}>
+        {post.title}
+      </Link>
+    </li>
   )
 }
 
