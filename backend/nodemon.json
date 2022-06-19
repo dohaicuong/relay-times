@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "src"
+  ],
+  "ignore": [
+    "src/**/*.test.ts"
+  ],
+  "ext": "ts,mjs,js,json,graphql",
+  "exec": "rm -rf ./built && etsc && node ./built/src/index.js",
+  "legacyWatch": true
+}

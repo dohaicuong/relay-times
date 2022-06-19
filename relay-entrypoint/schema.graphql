@@ -1,0 +1,40 @@
+"""Exposes a URL that specifies the behavior of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behavior of this scalar."""
+  url: String!
+) on SCALAR
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Post implements Node {
+  body: String!
+  id: ID!
+  title: String!
+}
+
+type Query {
+  node(id: ID!): Node
+  nodes(ids: [ID!]!): [Node]!
+  posts(after: String, before: String, first: Int, last: Int): QueryPostsConnection!
+}
+
+type QueryPostsConnection {
+  edges: [QueryPostsConnectionEdge]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type QueryPostsConnectionEdge {
+  cursor: String!
+  node: Post!
+}
+

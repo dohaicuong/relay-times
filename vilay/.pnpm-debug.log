@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: get-graphql-schema",
+      "code": "ENOENT",
+      "stack": "Error: not found: get-graphql-schema\n    at getNotFoundError (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:41700:51)\n    at Function.whichSync [as sync] (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:41777:13)\n    at getCommandAbsolutePathSync (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:43342:44)\n    at default_1 (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:43351:32)\n    at /usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:179510:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/home/yuki/Desktop/personal/relay-ssr/villay",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: get-graphql-schema",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: get-graphql-schema\n    at getNotFoundError (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:41700:51)\n    at Function.whichSync [as sync] (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:41777:13)\n    at getCommandAbsolutePathSync (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:43342:44)\n    at default_1 (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:43351:32)\n    at /usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:179510:39"
+    }
+  }
+}

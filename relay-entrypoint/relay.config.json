@@ -1,0 +1,11 @@
+{
+  "src": ".",
+  "schema": "./schema.graphql",
+  "excludes": ["**/dist/**", "**/node_modules/**", "**/__generated__/**"],
+  "language": "typescript",
+  "eagerEsModules": true,
+  "persistConfig": {
+    "file": "./persisted_queries.json",
+    "algorithm": "MD5"
+  }
+}
