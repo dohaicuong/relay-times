@@ -1,10 +1,10 @@
 import { Suspense, useEffect } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-import { EntryPointContainer, useEntryPointLoader } from 'react-relay'
+import { EntryPointContainer, useEntryPointLoader, useRelayEnvironment } from 'react-relay'
 import PostsEntrypoint from './features/posts/PostsEntrypoint'
-import { environment } from './providers/relay'
 
 const App = () => {
+  const environment = useRelayEnvironment()
   const [
     entrypointReference,
     loadEntryPoint,
