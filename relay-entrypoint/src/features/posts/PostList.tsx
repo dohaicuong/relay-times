@@ -41,14 +41,16 @@ const PostList: React.FC<PostListProps> = ({ queryRef }) => {
   )
 
   return (
-    <ul>
-      {data.posts?.edges.map(edge => {
-        if (!edge?.node?.id) return null
-        return <PostListItem key={edge.node.id} postRef={edge.node} />
-      })}
+    <>
+      <ul>
+        {data.posts?.edges.map(edge => {
+          if (!edge?.node?.id) return null
+          return <PostListItem key={edge.node.id} postRef={edge.node} />
+        })}
+      </ul>
       {isLoadingNext && <p>Loading more posts...</p>}
       {hasNext && <button disabled={isLoadingNext} onClick={() => loadNext(10)}>Load more</button>}
-    </ul>
+    </>
   )
 }
 

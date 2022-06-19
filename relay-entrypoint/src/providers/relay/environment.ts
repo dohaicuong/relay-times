@@ -11,7 +11,7 @@ const network = new RelayNetworkLayer(
     urlMiddleware({
       url: () => Promise.resolve(import.meta.env.VITE_GRAPHQL_ENDPOINT),
     }),
-    mercuriusPersistedQueriesMiddleware()
+    mercuriusPersistedQueriesMiddleware(),
   ]
 )
 

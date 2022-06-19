@@ -16,10 +16,7 @@ const App = () => {
 
   useEffect(() => {
     loadEntryPoint({})
-
-    return () => {
-      disposeEntryPoint()
-    }
+    return disposeEntryPoint
   }, [])
 
   return (
